@@ -9,7 +9,8 @@
 #import "Stream.h"
 #import "Controller.h"
 
-@implementation stream
+@implementation Stream
+
 + (void)startWine {
     NSTask *task = [[NSTask alloc] init];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);

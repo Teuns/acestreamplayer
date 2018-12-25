@@ -9,7 +9,7 @@
 #import "Download.h"
 #import "Stream.h"
 
-@implementation download
+@implementation Download
 
 + (void)dependencies {
     NSTask *task = [[NSTask alloc] init];
