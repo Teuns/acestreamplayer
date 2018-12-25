@@ -12,7 +12,8 @@
 @implementation Download
 
 + (void)dependencies {
-    NSTask *task = [[NSTask alloc] init];
+    NSTask *task1 = [[NSTask alloc] init];
+    NSTask *task2 = [[NSTask alloc] init];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray   *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -39,18 +40,17 @@
             NSLog(@"Failed to create directory \"%@\". Error: %@", directory, error);
         }
     
-        [task setLaunchPath: @"/usr/bin/tar"];
-        [task setArguments:
+        [task1 setLaunchPath: @"/usr/bin/tar"];
+        [task1 setArguments:
          [NSArray arrayWithObjects: @"-zxvf", winehqPath, @"--directory", directory, nil]];
-        [task launch];
-        [task waitUntilExit];
-        if (0 != [task terminationStatus])
+        [task1 launch];
+        [task1 waitUntilExit];
+        if (0 != [task1 terminationStatus])
             NSLog(@"Extracting failed.");
         
-        [task release];
+        [task1 release];
     }
     
-    NSTask *task2 = [[NSTask alloc] init];
     NSString *enginePath = [NSString stringWithFormat:@"%@/%@", directory, @"engine.zip"];
     NSString *stringURL = @"https://files.teunstrik.com/engine.zip";
     NSURL  *url = [NSURL URLWithString:stringURL];
@@ -71,7 +71,7 @@
          [NSArray arrayWithObjects: @"-a", enginePath, @"-d", directory, nil]];
         [task2 launch];
         [task2 waitUntilExit];
-        if (0 != [task terminationStatus])
+        if (0 != [task2 terminationStatus])
             NSLog(@"Extracting failed.");
         [task2 release];
         
