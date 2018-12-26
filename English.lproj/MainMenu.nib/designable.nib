@@ -21,18 +21,8 @@
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="217">
                         <rect key="frame" x="0.0" y="46" width="779" height="383"/>
                     </customView>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="251">
-                        <rect key="frame" x="688" y="6" width="77" height="32"/>
-                        <buttonCell key="cell" type="push" title="Pause" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="266">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="pause:" target="206" id="255"/>
-                        </connections>
-                    </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="252">
-                        <rect key="frame" x="631" y="6" width="66" height="32"/>
+                        <rect key="frame" x="612" y="6" width="66" height="32"/>
                         <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="267">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -42,31 +32,55 @@
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NGc-0h-q9V">
-                        <rect key="frame" x="20" y="13" width="609" height="22"/>
+                        <rect key="frame" x="20" y="13" width="509" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Stream ID" drawsBackground="YES" id="6Aa-ot-gN4">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="x3q-1S-4lO">
+                        <rect key="frame" x="668" y="6" width="103" height="32"/>
+                        <buttonCell key="cell" type="push" title="Fullscreen" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oVP-1u-FbC">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="fullscreen:" target="206" id="SNb-gm-PfJ"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="251">
+                        <rect key="frame" x="545" y="6" width="77" height="32"/>
+                        <buttonCell key="cell" type="push" title="Pause" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="266">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="pause:" target="206" id="255"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="x3q-1S-4lO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="252" secondAttribute="trailing" constant="2" id="1Ww-vV-qM5"/>
+                    <constraint firstItem="NGc-0h-q9V" firstAttribute="baseline" secondItem="252" secondAttribute="baseline" id="1n5-Tl-ApN"/>
                     <constraint firstItem="NGc-0h-q9V" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2" secondAttribute="leading" constant="20" symbolic="YES" id="5bA-Iz-abo"/>
-                    <constraint firstItem="252" firstAttribute="leading" secondItem="NGc-0h-q9V" secondAttribute="trailing" constant="8" id="APM-IQ-1fN"/>
-                    <constraint firstItem="252" firstAttribute="baseline" secondItem="251" secondAttribute="baseline" id="ER3-Ll-SiT"/>
+                    <constraint firstAttribute="bottom" secondItem="251" secondAttribute="bottom" constant="13" id="5y7-Dl-4Tr"/>
+                    <constraint firstItem="252" firstAttribute="leading" secondItem="NGc-0h-q9V" secondAttribute="trailing" constant="89" id="APM-IQ-1fN"/>
                     <constraint firstAttribute="trailing" secondItem="217" secondAttribute="trailing" id="F9Y-Gy-W4x"/>
-                    <constraint firstItem="252" firstAttribute="leading" secondItem="NGc-0h-q9V" secondAttribute="trailing" constant="8" symbolic="YES" id="IiD-4S-kQL"/>
-                    <constraint firstAttribute="bottom" secondItem="251" secondAttribute="bottom" constant="13" id="J2Q-EF-h2Y"/>
-                    <constraint firstItem="251" firstAttribute="leading" secondItem="252" secondAttribute="trailing" constant="3" id="OdK-vK-9Z9"/>
+                    <constraint firstItem="252" firstAttribute="leading" secondItem="NGc-0h-q9V" secondAttribute="trailing" constant="89" id="IiD-4S-kQL"/>
+                    <constraint firstItem="251" firstAttribute="leading" secondItem="NGc-0h-q9V" secondAttribute="trailing" constant="22" id="L5s-Kn-yHv"/>
+                    <constraint firstAttribute="trailing" secondItem="x3q-1S-4lO" secondAttribute="trailing" constant="14" id="LdU-A1-7ea"/>
+                    <constraint firstAttribute="trailing" secondItem="251" secondAttribute="trailing" constant="163" id="Osj-3B-6SC"/>
+                    <constraint firstItem="251" firstAttribute="top" secondItem="2" secondAttribute="bottom" constant="-34" id="QDV-z0-xMl"/>
                     <constraint firstItem="217" firstAttribute="top" secondItem="2" secondAttribute="top" id="TDN-U8-t3D"/>
-                    <constraint firstAttribute="trailing" secondItem="251" secondAttribute="trailing" constant="20" symbolic="YES" id="WKi-aA-qNY"/>
                     <constraint firstItem="NGc-0h-q9V" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" id="Xqk-U7-Dcf"/>
-                    <constraint firstItem="251" firstAttribute="baseline" secondItem="NGc-0h-q9V" secondAttribute="baseline" id="Yka-G1-47f"/>
+                    <constraint firstItem="NGc-0h-q9V" firstAttribute="baseline" secondItem="x3q-1S-4lO" secondAttribute="baseline" id="eIJ-da-8MV"/>
                     <constraint firstItem="217" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="k64-mk-fQq"/>
-                    <constraint firstItem="251" firstAttribute="top" secondItem="217" secondAttribute="bottom" constant="12" id="oLm-3l-aqa"/>
+                    <constraint firstItem="NGc-0h-q9V" firstAttribute="baseline" secondItem="251" secondAttribute="baseline" id="pRs-U9-duk"/>
+                    <constraint firstItem="NGc-0h-q9V" firstAttribute="top" secondItem="217" secondAttribute="bottom" constant="11" id="sYn-oH-T0W"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="10" y="199"/>
+            <point key="canvasLocation" x="9.5" y="198.5"/>
         </window>
         <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
             <items>
@@ -309,7 +323,6 @@
         <customObject id="206" userLabel="Controller" customClass="Controller">
             <connections>
                 <outlet property="idTextField" destination="NGc-0h-q9V" id="ba8-jZ-JTj"/>
-                <outlet property="myTextField" destination="NGc-0h-q9V" id="NrT-8e-yOY"/>
                 <outlet property="videoHolderView" destination="217" id="224"/>
                 <outlet property="window" destination="21" id="207"/>
             </connections>

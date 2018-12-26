@@ -39,6 +39,14 @@
     [Download dependencies];
 }
 
+- (void)fullscreen:(id)sender {
+    if (!([window styleMask] & NSWindowStyleMaskFullScreen)) {
+        [window toggleFullScreen:true];
+    }else{
+        [window toggleFullScreen:false];
+    }
+}
+
 - (void)play:(id)sender
 {
     NSString *streamID = [_idTextField stringValue];
